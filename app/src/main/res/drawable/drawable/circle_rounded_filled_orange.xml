@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="34dp"
+                android:height="34dp" />
+            <solid android:color="@android:color/holo_orange_light" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/md_theme_dark_background" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_exclamation"
+        android:width="@dimen/m36"
+        android:height="@dimen/m36"
+        android:tint="@color/md_theme_dark_background"
+        android:gravity="center" />
+</layer-list>

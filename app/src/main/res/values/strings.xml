@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Encrypt</string>
+    <string name="delete_account">This will permanently remove %1$s\'s account from our database.
+        To confirm, type the password of this account in the box below.
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome!</string>
+    <string name="landing">landing</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="username_email">Username / Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="social_account">Or connect with social account</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="sign_up_now">Sign Up Now!</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_continue">Sign up and continue</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="prefix_phone">+62</string>
+    <string name="remember_me">Remember me</string>
+    <string name="have_account">Have an account?</string>
+    <string name="login_now">Login Now!</string>
+    <string name="encription_type">Encription Type</string>
+
+</resources>

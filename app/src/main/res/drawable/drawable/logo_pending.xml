@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="100dp"
+                android:height="100dp" />
+            <solid android:color="@color/blue" />
+
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_pending"
+        android:width="70dp"
+        android:height="70dp"
+        android:tint="@color/md_theme_dark_background"
+        android:gravity="center" />
+</layer-list>

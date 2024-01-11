@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        app:iconTint="@color/green"
+        android:title="Home"
+        android:icon="@drawable/ic_estate" />
+    <item
+        android:id="@+id/activity"
+        android:enabled="true"
+        android:title="Activity"
+        android:icon="@drawable/ic_chart_line" />
+    <item
+        android:id="@+id/cart"
+        android:enabled="true"
+        android:title="Cart"
+        android:iconTint="@color/colorLightBlue"
+        android:icon="@drawable/ic_shopping_cart" />
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:title="Profile"
+        android:icon="@drawable/ic_user" />
+</menu>

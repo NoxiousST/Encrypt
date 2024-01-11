@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="34dp"
+                android:height="34dp" />
+            <solid android:color="@android:color/holo_red_light" />
+            <corners
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"
+                android:bottomLeftRadius="@dimen/m16"
+                android:bottomRightRadius="0dp"/>
+        </shape>
+    </item>
+</layer-list>

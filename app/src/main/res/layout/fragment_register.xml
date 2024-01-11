@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.register.RegisterFragment">
+
+
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_theme_dark_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/m24">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/musticapro_semibold"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="36sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/m12"
+            android:fontFamily="@font/musticapro_regular"
+            android:text="@string/sign_up_continue"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlUsername"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/m12"
+            android:hint="Username"
+            app:boxBackgroundColor="@color/md_theme_dark_surface"
+            app:boxCornerRadiusBottomEnd="@dimen/m16"
+            app:boxCornerRadiusBottomStart="@dimen/m16"
+            app:boxCornerRadiusTopEnd="@dimen/m16"
+            app:boxCornerRadiusTopStart="@dimen/m16"
+            app:boxStrokeColor="@drawable/line_selector"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/pq_profile">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_medium"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:letterSpacing=".025"
+                android:textColor="@color/md_theme_dark_onSurface"
+                android:textColorHint="#CCCCCC" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/m12"
+            app:boxBackgroundColor="@color/md_theme_dark_surface"
+            app:boxCornerRadiusBottomEnd="@dimen/m16"
+            app:boxCornerRadiusBottomStart="@dimen/m16"
+            app:boxCornerRadiusTopEnd="@dimen/m16"
+            app:boxCornerRadiusTopStart="@dimen/m16"
+            app:boxStrokeColor="@drawable/line_selector"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/ic_at">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_medium"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:letterSpacing=".025"
+                android:textColor="@color/md_theme_dark_onSurface"
+                android:textColorHint="#CCCCCC" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/m12"
+            android:layout_marginTop="@dimen/m8"
+            app:boxBackgroundColor="@color/md_theme_dark_surface"
+            app:boxCornerRadiusBottomEnd="@dimen/m16"
+            app:boxCornerRadiusBottomStart="@dimen/m16"
+            app:boxCornerRadiusTopEnd="@dimen/m16"
+            app:boxCornerRadiusTopStart="@dimen/m16"
+            app:boxStrokeColor="@drawable/line_selector"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/ic_padlock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_medium"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:letterSpacing=".025"
+                android:textColor="@color/md_theme_dark_onSurface"
+                android:textColorHint="#CCCCCC" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlCPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/m12"
+            android:layout_marginTop="@dimen/m8"
+            app:boxBackgroundColor="@color/md_theme_dark_surface"
+            app:boxCornerRadiusBottomEnd="@dimen/m16"
+            app:boxCornerRadiusBottomStart="@dimen/m16"
+            app:boxCornerRadiusTopEnd="@dimen/m16"
+            app:boxCornerRadiusTopStart="@dimen/m16"
+            app:boxStrokeColor="@drawable/line_selector"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/ic_padlock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_medium"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:letterSpacing=".025"
+                android:textColor="@color/md_theme_dark_onSurface"
+                android:textColorHint="#CCCCCC" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/m12"
+            android:layout_marginTop="@dimen/m8"
+            app:boxBackgroundColor="@color/md_theme_dark_surface"
+            app:boxCornerRadiusBottomEnd="@dimen/m16"
+            app:boxCornerRadiusBottomStart="@dimen/m16"
+            app:boxCornerRadiusTopEnd="@dimen/m16"
+            app:boxCornerRadiusTopStart="@dimen/m16"
+            app:boxStrokeColor="@drawable/line_selector"
+            app:hintEnabled="false"
+            app:startIconDrawable="@drawable/ic_padlock">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_medium"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:letterSpacing=".025"
+                android:text="@string/prefix_phone"
+                android:textColor="@color/md_theme_dark_onSurface"
+                android:textColorHint="#CCCCCC" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/musticapro_regular"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/m4"
+            android:text="@string/remember_me"
+            android:textAlignment="inherit"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:buttonTint="@color/md_theme_dark_primary" />
+
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/m12"
+            android:backgroundTint="@color/normal_selector_button"
+            android:enabled="false"
+            android:fontFamily="@font/musticapro_semibold"
+            android:paddingVertical="@dimen/m8"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/normal_selector_text"
+            android:textSize="22sp"
+            app:finalCornerAngle="@dimen/m64"
+            app:initialCornerAngle="@dimen/m64"
+            app:spinning_bar_color="@color/white"
+            app:spinning_bar_padding="@dimen/m8" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_regular"
+                android:text="@string/have_account"
+                android:textAlignment="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/toLogin"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_semibold"
+                android:gravity="center"
+                android:paddingHorizontal="0dp"
+                android:paddingVertical="0dp"
+                android:text="@string/login_now"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

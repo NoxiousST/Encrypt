@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.ModalBottomSheet">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="net.stiller.encrypt.ui.main.profile.ProfileViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_theme_dark_background"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/m12"
+            android:paddingVertical="@dimen/m36">
+
+            <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                android:id="@+id/drag_handle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/m4"
+                android:fontFamily="@font/musticapro_semibold"
+                android:text="Change Username"
+                android:textColor="@color/md_theme_dark_primary"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/musticapro_regular"
+                android:justificationMode="inter_word"
+                android:text="Change your display username"
+                android:textColor="@color/md_theme_dark_gray_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tlUsername"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/m12"
+                android:layout_marginTop="@dimen/m8"
+                app:boxBackgroundColor="@color/md_theme_dark_surface"
+                app:boxCornerRadiusBottomEnd="@dimen/m16"
+                app:boxCornerRadiusBottomStart="@dimen/m16"
+                app:boxCornerRadiusTopEnd="@dimen/m16"
+                app:boxCornerRadiusTopStart="@dimen/m16"
+                app:boxStrokeColor="@drawable/line_selector"
+                app:hintEnabled="false"
+                app:startIconDrawable="@drawable/pq_profile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/musticapro_regular"
+                    android:hint="Username"
+                    android:text="@{viewModel.userLiveData.username}"
+                    android:inputType="text"
+                    android:letterSpacing=".025"
+                    android:textColor="@color/white"
+                    android:textColorHint="#CCCCCC" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:enabled="false"
+                android:fontFamily="@font/musticapro_semibold"
+                android:letterSpacing="0.05"
+                android:paddingTop="@dimen/m8"
+                android:paddingBottom="@dimen/m12"
+                android:text="Update Username"
+                android:textAllCaps="false"
+                android:textColor="@color/normal_selector_text"
+                android:textSize="18sp"
+                app:backgroundTint="@color/normal_selector_button"
+                app:rippleColor="@color/md_theme_dark_gray_blue" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</layout>

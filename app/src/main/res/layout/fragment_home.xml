@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.HomeFragment">
+
+    <data>
+
+        <variable
+            name="frag"
+            type="net.stiller.encrypt.ui.main.home.HomeFragment" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_theme_dark_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/m12"
+            android:paddingVertical="@dimen/m8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="12dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_medium"
+                        android:paddingVertical="@dimen/m16"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="@dimen/m16"
+
+                        android:text="@string/encription_type"
+                        android:textColor="@color/md_theme_dark_onBackground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:paddingVertical="@dimen/m4"
+                        app:boxBackgroundColor="@color/md_theme_dark_surface"
+                        app:boxCornerRadiusBottomEnd="@dimen/m8"
+                        app:boxCornerRadiusBottomStart="@dimen/m8"
+                        app:boxCornerRadiusTopEnd="@dimen/m8"
+                        app:boxCornerRadiusTopStart="@dimen/m8"
+                        app:boxStrokeColor="@drawable/line_selector"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/textType"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actvType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:dropDownHeight="wrap_content"
+                            android:ellipsize="end"
+                            android:ems="10"
+                            android:hint="Select"
+                            android:inputType="none"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textSize="16sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="@dimen/m8"
+                    android:fontFamily="@font/musticapro_regular"
+                    android:text="Plain Text:"
+                    android:textColor="@color/md_theme_dark_onBackground" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/m4">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/m4"
+                        app:boxBackgroundColor="@color/md_theme_dark_surface"
+                        app:boxCornerRadiusBottomEnd="@dimen/m16"
+                        app:boxCornerRadiusBottomStart="@dimen/m16"
+                        app:boxCornerRadiusTopEnd="@dimen/m16"
+                        app:boxCornerRadiusTopStart="@dimen/m16"
+                        app:boxStrokeColor="@drawable/line_selector"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextEncrypt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/musticapro_regular"
+                            android:gravity="top|start"
+                            android:hint="Enter text to encrypt"
+                            android:inputType="textMultiLine"
+                            android:letterSpacing=".025"
+                            android:maxLines="6"
+                            android:minLines="6"
+                            android:paddingBottom="@dimen/m64"
+                            android:textColor="@color/white"
+                            android:textColorHint="#CCCCCC" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ptCopy"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/m12"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/copy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ptPaste" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ptPaste"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="@dimen/m12"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        android:paddingStart="14dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/ic_paste"
+                        app:iconPadding="0dp"
+                        app:iconSize="22dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ptClear" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ptClear"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="@dimen/m12"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/ic_delete"
+                        app:iconTint="@android:color/holo_red_light"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="@dimen/m4"
+                    android:fontFamily="@font/musticapro_regular"
+                    android:text="Secret Key:"
+                    android:textColor="@color/md_theme_dark_onBackground" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textLayoutKey"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/m4"
+                        app:boxBackgroundColor="@color/md_theme_dark_surface"
+                        app:boxCornerRadiusBottomEnd="@dimen/m16"
+                        app:boxCornerRadiusBottomStart="@dimen/m16"
+                        app:boxCornerRadiusTopEnd="@dimen/m16"
+                        app:boxCornerRadiusTopStart="@dimen/m16"
+                        app:boxStrokeColor="@drawable/line_selector"
+                        app:hintEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextKey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/musticapro_regular"
+                            android:gravity="top|left"
+                            android:hint="Enter key"
+                            android:inputType="text"
+                            android:letterSpacing=".025"
+                            android:maxLength="16"
+                            android:maxLines="1"
+                            android:paddingVertical="@dimen/m24"
+                            android:textColor="@color/white"
+                            android:textColorHint="#CCCCCC" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/keyShuffle"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="@dimen/m12"
+                        android:layout_marginTop="@dimen/m16"
+                        android:enabled="@{frag.type >= 0}"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/ic_shuffle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="@dimen/m4"
+                    android:fontFamily="@font/musticapro_regular"
+                    android:text="Chiper Text:"
+                    android:textColor="@color/md_theme_dark_onBackground" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/m4">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/m4"
+                        app:boxBackgroundColor="@color/md_theme_dark_surface"
+                        app:boxCornerRadiusBottomEnd="@dimen/m16"
+                        app:boxCornerRadiusBottomStart="@dimen/m16"
+                        app:boxCornerRadiusTopEnd="@dimen/m16"
+                        app:boxCornerRadiusTopStart="@dimen/m16"
+                        app:boxStrokeColor="@drawable/line_selector"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextDecrypt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/musticapro_regular"
+                            android:gravity="top|left"
+                            android:hint=""
+                            android:inputType="textMultiLine"
+                            android:letterSpacing=".025"
+                            android:minLines="6"
+                            android:paddingBottom="@dimen/m64"
+                            android:textColor="@color/white"
+                            android:textColorHint="#CCCCCC" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ctCopy"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/m12"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/copy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ctPaste" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ctPaste"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="@dimen/m12"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        android:paddingStart="14dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/ic_paste"
+                        app:iconPadding="0dp"
+                        app:iconSize="22dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ctClear" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ctClear"
+                        style="@style/Widget.MaterialComponents.Button.Icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="@dimen/m12"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/md_theme_dark_button"
+                        app:cornerRadius="@dimen/m8"
+                        app:icon="@drawable/ic_delete"
+                        app:iconTint="@android:color/holo_red_light"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/m8"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDecrypt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/m8"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/normal_selector_button"
+                        android:enabled="@{!frag.TDec.empty &amp; ((frag.type == 0 &amp; frag.TKey.length() == 8) || (frag.type == 1 &amp; frag.TKey.length() == 16))}"
+                        android:fontFamily="@font/musticapro_semibold"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Decrypt"
+                        android:textAllCaps="false"
+                        android:textColor="@color/normal_selector_text"
+                        android:textSize="18sp"
+                        app:cornerRadius="@dimen/m8"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEncrypt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/m8"
+                        android:layout_marginBottom="@dimen/m8"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/normal_selector_button"
+                        android:enabled="@{!frag.TEnc.empty &amp; ((frag.type == 0 &amp; frag.TKey.length() == 8) || (frag.type == 1 &amp; frag.TKey.length() == 16))}"
+                        android:fontFamily="@font/musticapro_semibold"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Encrypt"
+                        android:textAllCaps="false"
+                        android:textColor="@color/normal_selector_text"
+                        android:textSize="18sp"
+                        app:cornerRadius="@dimen/m8"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

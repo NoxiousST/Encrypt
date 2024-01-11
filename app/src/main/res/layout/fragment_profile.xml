@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="net.stiller.encrypt.ui.main.profile.ProfileViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_theme_dark_background">
+
+            <LinearLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/m4"
+                android:paddingTop="@dimen/m4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    app:backgroundTint="@color/md_theme_dark_background"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_angle_left_b"
+                    app:iconTint="@color/white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/louis_george_cafe_bold"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/m8"
+                    android:text="Account Profile"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/logout"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    app:backgroundTint="@color/md_theme_dark_background"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/logout"
+                    app:iconTint="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintTop_toBottomOf="@id/topBar">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/m16"
+                    android:src="@drawable/im_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/musticapro_semibold"
+                    android:paddingHorizontal="@dimen/m4"
+                    android:paddingVertical="@dimen/m16"
+                    android:text="Profile Info"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/m16">
+
+                    <TextView
+                        android:id="@+id/profileInfo2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Username"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvUsername"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/profileInfo3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Bio"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvBio"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/profileInfo2" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvUsername"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:drawablePadding="@dimen/m8"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:maxLines="1"
+                        android:paddingVertical="@dimen/m8"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:text="@{viewModel.userLiveData.username}"
+                        android:textColor="@color/md_theme_dark_onBackground"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/profileInfo2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/profileInfo2"
+                        app:layout_constraintTop_toTopOf="@id/profileInfo2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:drawablePadding="@dimen/m8"
+                        android:ellipsize="marquee"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:maxLines="2"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Describe yourself"
+                        android:textColor="@color/md_theme_dark_placeholder_text"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/profileInfo3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/profileInfo3"
+                        app:layout_constraintTop_toTopOf="@id/profileInfo3" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/m24"
+                    android:alpha=".15"
+                    app:dividerColor="@color/md_theme_dark_gray_blue" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/musticapro_semibold"
+                    android:paddingHorizontal="@dimen/m4"
+                    android:paddingVertical="@dimen/m16"
+                    android:text="Personal Info"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/m16">
+
+                    <TextView
+                        android:id="@+id/personalInfo1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="User ID"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvId"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/personalInfo2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="E-Mail"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvEmail"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personalInfo1" />
+
+                    <TextView
+                        android:id="@+id/personalInfo3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Phone Number"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvPhone"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personalInfo2" />
+
+                    <TextView
+                        android:id="@+id/personalInfo4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Gender"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvGender"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personalInfo3" />
+
+                    <TextView
+                        android:id="@+id/personalInfo5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Date of Birth"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvBirth"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personalInfo4" />
+
+                    <TextView
+                        android:id="@+id/personalInfo6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Password"
+                        android:textColor="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintEnd_toStartOf="@id/tvBirth"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/personalInfo5" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="@{viewModel.userLiveData.id}"
+                        android:textColor="@color/md_theme_dark_onBackground"
+                        app:layout_constraintBottom_toBottomOf="@id/personalInfo1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/personalInfo1"
+                        app:layout_constraintTop_toTopOf="@id/personalInfo1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:drawablePadding="@dimen/m8"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:justificationMode="inter_word"
+                        android:maxLines="1"
+                        android:ellipsize="marquee"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="@{viewModel.userLiveData.email}"
+                        android:textColor="@color/md_theme_dark_onBackground"
+                        app:autoSizeTextType="uniform"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/personalInfo2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/personalInfo2"
+                        app:layout_constraintTop_toTopOf="@id/personalInfo2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="@{!viewModel.userLiveData.phone.isEmpty() ? viewModel.userLiveData.phone : @string/app_name}"
+                        android:textColor="@color/md_theme_dark_placeholder_text"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/personalInfo3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/personalInfo3"
+                        app:layout_constraintTop_toTopOf="@id/personalInfo3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Pick your gender"
+                        android:textColor="@color/md_theme_dark_placeholder_text"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/personalInfo4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/personalInfo4"
+                        app:layout_constraintTop_toTopOf="@id/personalInfo4" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBirth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:text="Set your birthdate"
+                        android:textColor="@color/md_theme_dark_placeholder_text"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/personalInfo5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/personalInfo5"
+                        app:layout_constraintTop_toTopOf="@id/personalInfo5" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/pq_arrow_right_16"
+                        android:fontFamily="@font/musticapro_regular"
+                        android:paddingVertical="@dimen/m8"
+                        android:maxLines="1"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:ellipsize="marquee"
+                        android:text="@{viewModel.userLiveData.password}"
+                        android:textColor="@color/md_theme_dark_onBackground"
+                        app:drawableTint="@color/md_theme_dark_gray_blue"
+                        app:layout_constraintBottom_toBottomOf="@id/personalInfo6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/personalInfo6"
+                        app:layout_constraintTop_toTopOf="@id/personalInfo6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/m24"
+                    android:alpha=".15"
+                    app:dividerColor="@color/md_theme_dark_gray_blue" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/m16"
+                    android:layout_marginTop="@dimen/m24"
+                    android:backgroundTint="#d6493e"
+                    app:cardCornerRadius="@dimen/m12">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btnDelete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingVertical="@dimen/m4">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/iconSettingL"
+                            style="@style/Widget.Material3.Button.IconButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:paddingVertical="0dp"
+                            app:icon="@drawable/pq_trash"
+                            app:iconSize="@dimen/m28"
+                            app:iconTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/headerSettingL"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/m8"
+                            android:layout_marginBottom="@dimen/m8"
+                            android:fontFamily="@font/musticapro_semibold"
+                            android:text="Delete Account"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toEndOf="@id/iconSettingL"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textSettingL"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/m16"
+                            android:layout_marginBottom="@dimen/m8"
+                            android:fontFamily="@font/musticapro_regular"
+                            android:text="There is no going back. Please be certain."
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/headerSettingL"
+                            app:layout_constraintTop_toBottomOf="@id/headerSettingL" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        </FrameLayout>
+
+    </FrameLayout>
+</layout>
